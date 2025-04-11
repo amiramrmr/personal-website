@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>amira.__.mrmr</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: url('https://www.transparenttextures.com/patterns/cubes.png'), linear-gradient(to bottom, #fff5f8, #fcefee);
+      background-blend-mode: overlay;
+      background-size: cover;
+      color: #4b2e2e;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    .header {
+      padding: 40px 20px;
+    }
+
+    .profile-img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background-color: #fbd1e0;
+      margin: 0 auto 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      border: 3px solid #f5a5c1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 80px;
+    }
+
+    h2 {
+      font-size: 36px;
+      margin-bottom: 10px;
+      color: #c05f94;
+      font-family: 'cursive';
+    }
+
+    .username {
+      font-size: 18px;
+      padding: 8px 16px;
+      background-color: #f8c8dc;
+      border-radius: 25px;
+      display: inline-block;
+      font-weight: bold;
+      letter-spacing: 1px;
+      margin-bottom: 30px;
+      transition: all 0.3s ease;
+    }
+
+    .username a {
+      color: #a14c78;
+      text-decoration: none;
+    }
+
+    .username a:hover {
+      color: #7a3a5c;
+    }
+
+    .icons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 40px;
+    }
+
+    .icon {
+      width: 60px;
+      height: 60px;
+      background-color: #fff;
+      border-radius: 15px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      font-size: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .icon:hover {
+      transform: scale(1.1);
+      background-color: #fce4ed;
+    }
+
+    nav {
+      margin-bottom: 40px;
+    }
+
+    .nav-button {
+      background-color: #f5a5c1;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin: 5px;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .nav-button:hover {
+      background-color: #e78cb0;
+    }
+
+    .about-button, .creation-button, .blog-button, .contact-button {
+      background-color: #fbd1e0;
+      color: #a14c78;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .about-button:hover, .creation-button:hover, .blog-button:hover, .contact-button:hover {
+      background-color: #f5a5c1;
+      box-shadow: 0 4px 10px rgba(245, 165, 193, 0.4);
+      transform: scale(1.05);
+    }
+
+    .about-section, .creation-section, .blog-section, .contact-section {
+      display: none;
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff0f6;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      text-align: left;
+      color: #4b2e2e;
+    }
+
+    .contact-section a {
+      color: #f5a5c1;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .contact-section a:hover {
+      color: #e78cb0;
+      text-decoration: underline;
+    }
+
+    .contact-section p {
+      font-size: 16px;
+      margin: 10px 0;
+    }
+
+    .empty-message {
+      font-size: 16px;
+      color: #a14c78;
+      text-align: center;
+    }
+
+    footer {
+      font-size: 14px;
+      color: #888;
+      margin-bottom: 20px;
+    }
+
+    /* أنماط جديدة للأيقونات العلوية */
+    .top-icons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 20px 0;
+    }
+
+    .top-icon {
+      width: 50px;
+      height: 50px;
+      background-color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+
+    .top-icon:hover {
+      transform: scale(1.1);
+      background-color: #f8c8dc;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="profile-img">💻</div>
+    <h2>Fatma Zohra Mohamedi</h2>
+    <div class="username">
+      <a href="https://instagram.com/amira.__.mrmr" target="_blank">@amira.__.mrmr</a>
+    </div>
+  </div>
+
+  <nav>
+    <button class="nav-button about-button" onclick="toggleAbout()">👩‍💻 About Me</button>
+    <button class="nav-button creation-button" onclick="toggleCreation()">🎨 My Creation</button>
+    <button class="nav-button blog-button" onclick="toggleBlog()">📝 My Blog</button>
+    <button class="nav-button contact-button" onclick="toggleContact()">✉️ Contact Me</button>
+  </nav>
+
+  <!-- قسم معلومات عني -->
+  <div id="aboutSection" class="about-section">
+    <h2>About Me</h2>
+    <p>مرحبًا! أنا فاطمة الزهراء محمدي، مبرمجة ومهتمة بتطوير الويب، التصميم، وتطوير التطبيقات. أحب تعلم لغات البرمجة مثل Python وHTML وCSS، ولتطوير تطبيقات Android أستخدم Dart (مع Flutter)، Kotlin، وJava. أسعى دائمًا لتطوير مهاراتي ومشاركة مشاريعي مع العالم! 💻🌸</p>
+  </div>
+
+  <!-- قسم المشاريع -->
+  <div id="creationSection" class="creation-section">
+    <h2>My Creation</h2>
+    <div id="projectGrid" class="project-grid">
+      <p class="empty-message">لم يتم إضافة مشاريع بعد. ترقبوا المزيد قريبًا! 🌟</p>
+    </div>
+  </div>
+
+  <!-- قسم المدونة -->
+  <div id="blogSection" class="blog-section">
+    <h2>My Blog</h2>
+    <div id="blogGrid" class="blog-grid">
+      <p class="empty-message">لم تُضف منشورات بعد. ترقبوا المزيد قريبًا! 📝</p>
+    </div>
+  </div>
+
+  <!-- قسم التواصل -->
+  <div id="contactSection" class="contact-section">
+    <h2>Contact Me</h2>
+    <p>تواصلوا معي للاستفسارات، التعاون في المشاريع ! 🌸</p>
+    <p><strong>Phone:</strong> <a href="tel:+1234567890">+1234567890</a></p>
+    <p><strong>Instagram:</strong> <a href="https://instagram.com/amira.__.mrmr" target="_blank">@amira.__.mrmr</a></p>
+  </div>
+
+  <footer>
+    Made with love by @amira.__.mrmr ❤️
+  </footer>
+
+  <script>
+    function toggleAbout() {
+      const aboutSection = document.getElementById('aboutSection');
+      const creationSection = document.getElementById('creationSection');
+      const blogSection = document.getElementById('blogSection');
+      const contactSection = document.getElementById('contactSection');
+      aboutSection.style.display = aboutSection.style.display === 'block' ? 'none' : 'block';
+      creationSection.style.display = 'none';
+      blogSection.style.display = 'none';
+      contactSection.style.display = 'none';
+    }
+
+    function toggleCreation() {
+      const aboutSection = document.getElementById('aboutSection');
+      const creationSection = document.getElementById('creationSection');
+      const blogSection = document.getElementById('blogSection');
+      const contactSection = document.getElementById('contactSection');
+      creationSection.style.display = creationSection.style.display === 'block' ? 'none' : 'block';
+      aboutSection.style.display = 'none';
+      blogSection.style.display = 'none';
+      contactSection.style.display = 'none';
+    }
+
+    function toggleBlog() {
+      const aboutSection = document.getElementById('aboutSection');
+      const creationSection = document.getElementById('creationSection');
+      const blogSection = document.getElementById('blogSection');
+      const contactSection = document.getElementById('contactSection');
+      blogSection.style.display = blogSection.style.display === 'block' ? 'none' : 'block';
+      aboutSection.style.display = 'none';
+      creationSection.style.display = 'none';
+      contactSection.style.display = 'none';
+    }
+
+    function toggleContact() {
+      const aboutSection = document.getElementById('aboutSection');
+      const creationSection = document.getElementById('creationSection');
+      const blogSection = document.getElementById('blogSection');
+      const contactSection = document.getElementById('contactSection');
+      contactSection.style.display = contactSection.style.display === 'block' ? 'none' : 'block';
+      aboutSection.style.display = 'none';
+      creationSection.style.display = 'none';
+      blogSection.style.display = 'none';
+    }
+
+    // تحميل منشورات المدونة من blog-posts.json
+    async function loadBlogPosts() {
+      try {
+        const response = await fetch('blog-posts.json');
+        const posts = await response.json();
+        const blogGrid = document.getElementById('blogGrid');
+        blogGrid.innerHTML = '';
+
+        if (posts.length === 0) {
+          blogGrid.innerHTML = '<p class="empty-message">لم تُضف منشورات بعد. ترقبوا المزيد قريبًا! 📝</p>';
+          return;
+        }
+
+        posts.forEach(post => {
+          const postElement = document.createElement('div');
+          postElement.className = 'blog-post';
+          postElement.innerHTML = `
+            ${post.imageSrc ? `<img src="${post.imageSrc}" alt="${post.title}">` : ''}
+            <h3>${post.title}</h3>
+            <p>${post.content}</p>
+          `;
+          blogGrid.appendChild(postElement);
+        });
+      } catch (error) {
+        console.error('Error loading blog posts:', error);
+      }
+    }
+
+    // تحميل المنشورات عند فتح الصفحة
+    document.addEventListener('DOMContentLoaded', loadBlogPosts);
+  </script>
+
+</body>
+</html>
